@@ -27,7 +27,7 @@
   "dependencies" : {
     "ws"   :  ">=0.4.27",
     "commander" :  ">=2.0.0",
-    "libant" : "git://github.com/hkskoglund/libant.git"
+    "libant" : "git://github.com/hkskoglund/libant.git#06943e0630e75fa96c2d9ce4bc0817faebe400eb"
     },
   "bugs" : 
         { "url" : "https://github.com/hkskoglund/getFIT/issues" },

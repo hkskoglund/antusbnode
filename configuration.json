@@ -19,6 +19,6 @@
     "usb" : {
         "name": "Garmin USB2 Wireless ANT+",
         "idVendor" :  4047,
-        "idProduct" : 4104
+        "idProduct" : 4105
     }
 }
