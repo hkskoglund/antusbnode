@@ -1,14 +1,20 @@
-#getfit
+# getfit
 A utility to get FIT files from antfs devices. By default new files are downloaded automatically. Files are downloaded to current directory.
 
-##install
+## install
 
 ```
-npm install getfit
+npm install [-g] getfit
 
 ```
 
-##download
+## download
+
+Download new files, if any
+```
+node getfit
+
+```
 
 Download file at index 10
 ```
@@ -22,7 +28,7 @@ node getfit -d 10,11,12
 ```
 
 
-##ls
+## ls
 List directory on device
 ```
 node getfit -l
@@ -43,18 +49,19 @@ totals 4307
 -r--rw--- 1 getfit antfs          72 Dec 31  1989 Weight-13.fit
 -r--rw--- 1 getfit antfs         168 Dec 31  1989 Totals-14.fit
 -rw-rw--- 1 getfit antfs          72 Dec 31  1989 Goals-15.fit
-
-
 ```
 
-##erase
+## erase
 Erase file at index 10
 ```
 node getfit -e 10
 
 ```
 
-##usbport
+## authorization
+When a new device is discovered it will pair with it if necessary and save the key in a authorication file authorization-{client serial number}.key in current working directory.
+
+## usbport
 
 By default the first available ant device found during scanning is used. All channels are reset/terminated  on the device.
 
@@ -64,22 +71,21 @@ node getfit -p 1
 
 ```
 
-##device number
+## device number
 By default any device is searched for, i.e 0 is used for device number.
 Search for device 1
 ```
 node getfit -n 1
 ```
 
-
-##list ant devices
+## list ant devices
 ```
 node getfit -u
 0 Bus 1 Number 7: ID fcf:1008
 1 Bus 4 Number 2: ID fcf:1009
 ```
 
-##logging
+## logging
 
 Show detailed logging of protocol negotiation as well as usb traffic
 ```
@@ -87,12 +93,13 @@ node getfit -v
 
 ```
 
-##libusb debug
+## libusb debug
 Specify libusb log level 0 - 4
 ```
 node getfit -L {loglevel}
 
 ```
 
-##licence
+
+## licence
 MIT

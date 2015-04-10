@@ -50,6 +50,18 @@ function onANTInited(error, notificationStartup) {
 
 }
 
+if (argv.h)
+{
+  console.log('Usage: getfit -d {index} -e {index} -l ');
+  console.log(' -d {index} or -d {index1,..,indexn} download');
+  console.log(' -e {index} or -d {index1,..,indexn} erase');
+  console.log(' -l list device directory');
+  console.log(' -p {usbport} use usb port other than default 0');
+  console.log(' -v verbose logging');
+  console.log(' -L {loglevel} libusb logging');
+  process.exit(0);
+}
+
 devices = antHost.getDevices();
 
 if (!devices || !devices.length)
