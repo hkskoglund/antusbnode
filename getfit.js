@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var channel = 0,
   net = 0,
 

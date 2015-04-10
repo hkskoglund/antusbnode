@@ -56,7 +56,7 @@ node getfit -e 10
 
 ##usbport
 
-By default getfit will use the first available ant device it found during scanning of the usb ports, i.e port 0 is used unless. All channels are reset.
+By default the first available ant device found during scanning is used. All channels are reset/terminated  on the device.
 
 Use usb port 1
 ```
