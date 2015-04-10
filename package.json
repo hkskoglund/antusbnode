@@ -1,37 +1,45 @@
 {
   "name": "getfit",
-  "version": "0.1.0",
-  "description": "get FIT files over USB/ANT-FS and streaming of sensor ANT+ pages on websocket",
-   "author": {
-      "name" : "Henning Knut Skoglund",
-      "email" : "hkskoglund@gmail.com"
-  },
- "preferGlobal": false,
- "private" : true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hkskoglund/getFIT.git"
-  },
-"scripts": {
-    "start": "node ./getfit.js"
-},
- "bin" : "./getfit.js",
+  "version": "0.2.0",
+  "description": "get FIT files from antfs devices",
+
+  "bin": "./getfit.js",
 
   "keywords": [
     "cli",
     "ant",
+    "antfs",
     "usb",
-    "ant+",
-    "websocket"
+    "fit"
   ],
-  "dependencies" : {
-    "ws"   :  ">=0.4.27",
-    "commander" :  ">=2.0.0",
-    "libant" : "git://github.com/hkskoglund/libant.git#06943e0630e75fa96c2d9ce4bc0817faebe400eb"
-    },
-  "bugs" : 
-        { "url" : "https://github.com/hkskoglund/getFIT/issues" },
+
+  "homepage": "https://github.com/hkskoglund/getfit",
+
+  "bugs": {
+    "url": "https://github.com/hkskoglund/getfit/issues"
+  },
+
   "license": "MIT",
+
+  "author": {
+    "name": "Henning Knut Skoglund",
+    "email": "hkskoglund@gmail.com"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hkskoglund/getfit.git"
+  },
+
+  "scripts": {
+
+  },
+
+  "dependencies": {
+    "libantjs": "git://github.com/hkskoglund/libantjs.git",
+    "minimist": "^1.1.1"
+  },
+
   "engines": {
     "node": ">=0.10"
   }
