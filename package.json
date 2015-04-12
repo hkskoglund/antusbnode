@@ -1,9 +1,11 @@
 {
   "name": "getfit",
-  "version": "0.2.1",
-  "description": "get FIT files from antfs devices",
+  "version": "0.2.2",
+  "description": "get FIT files from antfs device",
 
   "bin": "./getfit.js",
+
+  "man": "./man/getfit.1",
 
   "keywords": [
     "cli",

@@ -1,5 +1,5 @@
 # getfit
-A utility to get FIT files from antfs devices. By default new files are downloaded automatically. Files are downloaded to current directory.
+A utility to get FIT files from an antfs device. By default new files are downloaded to current directory.
 
 ## install
 

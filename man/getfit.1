@@ -1,0 +1,35 @@
+.TH getfit 1
+.SH NAME
+getfit \- get FIT files from antfs device
+.SH SYNOPSIS
+.B getfit
+[\fB\-d\fR \fIINDEX...\fR]
+[\fB\-e\fR \fIINDEX...\fR]
+.SH DESCRIPTION
+A utility to get FIT files from an antfs device. By default new files are downloaded to current directory.
+.TP
+.BR \-d " "\fIINDEX\fR
+Download file at index
+.TP
+.BR \-e " "\fIINDEX\fR
+Erase file at index
+.TP
+.BR \-l
+List directory on device
+.TP
+.BR \-n " "\fIDEVICENUMBER\fR
+Connect to specific device number. Default 0 (any)
+.TP
+.BR \-u\fR
+List plugged in usb ANT devices
+.TP
+.BR \-p " "\fIPORT\fR
+Use specific usb port. Default 0 (first)
+.TP
+.BR \-v\fR
+Verbose logging including usb traffic.
+.TP
+.BR \-L\fR " "\fILEVEL\fR
+libusb log level
+.SH AUTHOR
+Written by Henning Knut Skoglund.

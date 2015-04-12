@@ -1,92 +1,81 @@
 #!/usr/bin/env node
-var channel = 0,
-  net = 0,
 
-  devices,
-  hostname = 'getfit',
-  argv = require('minimist')(process.argv.slice(2)),
-  antHost = new(require('libantjs'))({
-    log: argv.v,
-    debugLevel: argv.L || 0 // 0 - 4 enables libusb debug info.
-  }),
-  antfsHost,
-  deviceNumber = argv.n || 0, // 0 for any device
-  usbPort = argv.p || 0;
+var channel = 0,
+    net = 0,
+    devices,
+    hostname = 'getfit',
+    argv = require('minimist')(process.argv.slice(2)),
+    host = new(require('libantjs'))({
+      log: argv.v,
+      debugLevel: argv.L || 0 // 0 - 4 enables libusb debug info.
+    }),
+    deviceNumber = argv.n || 0, // 0 for any device
+    port = argv.p || 0;
 
 function onError(error) {
+
   console.trace();
-  console.error('error', error);
+  console.error('Error', error);
 }
 
 function onConnect(error) {
+
   if (error) {
-    console.log('onConnect', error);
+    console.log('Failed connect', error);
+    return;
+  }
+}
+
+function onExited(error) {
+    if (error)
+      console.error('Failed exit',error);
+}
+
+function onInited(error, notificationStartup) {
+
+  if (error) {
+    console.error('Failed init', error);
     return;
   }
 
-}
-
-function onANTexited(err) {
-  //  if (!err)
-  //    console.log(Date.now() + ' Exit ANT');
-}
-
-function onANTInited(error, notificationStartup) {
-
-  if (error) {
-    console.log('onantinited', error);
-    return;
-  }
-
-  antHost.on('transport_end', function() {
-    antHost.exit(onANTexited);
+  host.on('transport_end', function() {
+    host.exit(onExited);
   });
 
-  antHost.on('open', function(ch) {
+  host.on('open', function(ch) {
     console.log('Host ' + hostname + ' connecting to device ' + deviceNumber + ' on channel ' + ch);
   });
 
-  antHost.connectANTFS(channel, net, deviceNumber, hostname, argv.d, argv.e, argv.l, onConnect);
+  host.connectANTFS(channel, net, deviceNumber, hostname, argv.d, argv.e, argv.l, onConnect);
 
 }
 
-if (argv.h)
-{
-  console.log('Usage: getfit -d {index} -e {index} -l ');
+if (argv.h) {
+  console.log('Usage: getfit -d {index} -e {index} -l -p {port} -v -L {level} -h'+'\n');
+  console.log(' -h usage');
   console.log(' -d {index} or -d {index1,..,indexn} download');
   console.log(' -e {index} or -d {index1,..,indexn} erase');
   console.log(' -l list device directory');
-  console.log(' -p {usbport} use usb port other than default 0');
+  console.log(' -p {port} use usb port other than default 0');
   console.log(' -v verbose logging');
-  console.log(' -L {loglevel} libusb logging');
+  console.log(' -L {level} libusb logging, level 0 - 4');
   process.exit(0);
 }
 
-devices = antHost.getDevices();
+devices = host.getDevices();
 
 if (!devices || !devices.length)
-  console.error('No ANT devices available');
+  console.error('No ANT devices found');
 
 else if (argv.u) {
-  console.log(antHost.listDevices());
+  console.log(host.listDevices());
 } else {
 
   try {
 
-      antHost.init(usbPort, onANTInited);
+    host.init(port, onInited);
 
   } catch (err) {
     onError(err);
   }
 }
-
-
-// options
-// -n device number to search for
-// -d download,
-// -e erase,
-// -l list directory
-// -u show usb ANT devices
-// -p usb device to use
-// -v verbose logging
-// -L {level} libusb log level 0-4
