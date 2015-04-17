@@ -100,7 +100,7 @@ node getfit -L {loglevel}
 
 ```
 
-##troubleshoot
+## troubleshoot
 On fedora its required that
     * sudo yum install systemd-devel
     * sudo yum install gcc-c++
