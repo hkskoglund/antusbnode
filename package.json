@@ -1,12 +1,9 @@
 {
   "name": "getfit",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "get FIT files from antfs device",
-
   "bin": "./getfit.js",
-
   "man": "./man/getfit.1",
-
   "keywords": [
     "cli",
     "ant",
@@ -14,34 +11,24 @@
     "usb",
     "fit"
   ],
-
   "homepage": "https://github.com/hkskoglund/getfit",
-
   "bugs": {
     "url": "https://github.com/hkskoglund/getfit/issues"
   },
-
   "license": "MIT",
-
   "author": {
     "name": "Henning Knut Skoglund",
     "email": "hkskoglund@gmail.com"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/hkskoglund/getfit.git"
   },
-
-  "scripts": {
-
-  },
-
+  "scripts": {},
   "dependencies": {
     "libantjs": "git://github.com/hkskoglund/libantjs.git",
     "minimist": "^1.1.1"
   },
-
   "engines": {
     "node": ">=0.10"
   }
