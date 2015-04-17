@@ -100,6 +100,11 @@ node getfit -L {loglevel}
 
 ```
 
+##troubleshoot
+On fedora its required that
+    * sudo yum install systemd-devel
+    * sudo yum install gcc-c++
+is installed to compile libusb dependency
 
 ## licence
 MIT
