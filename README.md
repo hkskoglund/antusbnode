@@ -61,6 +61,12 @@ node getfit -e 10
 ## authorization
 When a new device is discovered it will pair with it if necessary and save the key in a authorication file authorization-{client serial number}.key in current working directory.
 
+## skip new files
+```
+node getfit -s
+
+```
+
 ## usbport
 
 By default the first available ant device found during scanning is used. All channels are reset/terminated  on the device.

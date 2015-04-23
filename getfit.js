@@ -43,21 +43,23 @@ function onInited(error, notificationStartup) {
   });
 
   host.on('open', function(ch) {
-    console.log('Host ' + hostname + ' connecting to device ' + deviceNumber + ' on channel ' + ch);
+    var msg = 'Host ' + hostname + ' connecting to device ' + deviceNumber + ' channel ' + ch;
+    host.deviceToString(devices[port], function _onDeviceInfo(e,m) { console.log(msg + ' - port ' + port + ' ' + m);});
   });
 
-  host.connectANTFS(channel, net, deviceNumber, hostname, argv.d, argv.e, argv.l, onConnect);
+  host.connectANTFS(channel, net, deviceNumber, hostname, argv.d, argv.e, argv.l, argv.s, onConnect);
 
 }
 
 if (argv.h) {
-  console.log('Usage: getfit -d {index} -e {index} -l -p {port} -v -L {level} -h'+'\n');
+  console.log('Usage: getfit -d {index} -e {index} -l -s -p {port} -v -L {level} -h'+'\n');
   console.log(' -h usage');
   console.log(' -d {index} or -d {index1,..,indexn} download');
   console.log(' -e {index} or -d {index1,..,indexn} erase');
   console.log(' -l list device directory');
   console.log(' -p {port} use usb port other than default 0');
   console.log(' -v verbose logging');
+  console.log(' -s skip download of new files');
   console.log(' -L {level} libusb logging, level 0 - 4');
   process.exit(0);
 }
