@@ -32,8 +32,8 @@ node getfit -d 10,11,12
 List directory on device
 ```
 node getfit -l
-Host getfit connecting to device 0 on channel 0
-totals 4307
+Host getfit connecting to device 0 channel 0 - port 0 Bus 4 Number 4: ID fcf:1009 Dynastream Innovations, ANT USB-m Stick
+totals 4290
 --w-rw--- 1 getfit antfs     1900544 Dec 31  1989 Manufacturer-1
 ----rw--- 1 getfit antfs      262144 Dec 31  1989 Manufacturer-2
 -r--rw--- 1 getfit antfs         574 Dec 31  1989 DeviceCapabilities-3.fit
@@ -43,12 +43,13 @@ totals 4307
 -rw-rw--- 1 getfit antfs        1159 Dec 31  1989 SportSettings-7.fit
 -rw-rw--- 1 getfit antfs         317 Dec 31  1989 SportSettings-8.fit
 -rw-rw--- 1 getfit antfs        1197 Dec 31  1989 SportSettings-9.fit
--r--rw--- 1 getfit antfs       36056 Apr 09 17:57 Activity-10.fit
--rw-rw--- 1 getfit antfs          72 Dec 31  1989 Schedule-11.fit
--rw-rw--- 1 getfit antfs         627 Dec 31  1989 Locations-12.fit
--r--rw--- 1 getfit antfs          72 Dec 31  1989 Weight-13.fit
--r--rw--- 1 getfit antfs         168 Dec 31  1989 Totals-14.fit
--rw-rw--- 1 getfit antfs          72 Dec 31  1989 Goals-15.fit
+-r--rw--- 1 getfit antfs       26135 Apr 21 18:23 Activity-10.fit
+-r--rw--- 1 getfit antfs        1180 Apr 23 10:24 Activity-11.fit
+-rw-rw--- 1 getfit antfs          72 Dec 31  1989 Schedule-12.fit
+-rw-rw--- 1 getfit antfs         627 Dec 31  1989 Locations-13.fit
+-r--rw--- 1 getfit antfs          72 Dec 31  1989 Weight-14.fit
+-r--rw--- 1 getfit antfs         168 Dec 31  1989 Totals-15.fit
+-rw-rw--- 1 getfit antfs          72 Dec 31  1989 Goals-16.fit
 ```
 
 ## erase
