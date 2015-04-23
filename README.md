@@ -59,6 +59,13 @@ node getfit -e 10
 
 ```
 
+## ignore client busy state optimization
+After each burst from client the state is busy and the host must wait at least 125 ms (if 8Hz channel period) for a new beacon.This optimization will ignore the busy state and assume that the client is ready for a new request (not recommended, but faster).
+```
+node getfit -b
+
+```
+
 ## authorization
 When a new device is discovered it will pair with it if necessary and save the key in a authorication file authorization-{client serial number}.key in current working directory.
 

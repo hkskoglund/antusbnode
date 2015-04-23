@@ -47,7 +47,7 @@ function onInited(error, notificationStartup) {
     host.deviceToString(devices[port], function _onDeviceInfo(e,m) { console.log(msg + ' - port ' + port + ' ' + m);});
   });
 
-  host.connectANTFS(channel, net, deviceNumber, hostname, argv.d, argv.e, argv.l, argv.s, onConnect);
+  host.connectANTFS(channel, net, deviceNumber, hostname, argv.d, argv.e, argv.l, argv.s, argv.b, onConnect);
 
 }
 
@@ -57,6 +57,7 @@ if (argv.h) {
   console.log(' -d {index} or -d {index1,..,indexn} download');
   console.log(' -e {index} or -d {index1,..,indexn} erase');
   console.log(' -l list device directory');
+  console.log(' -b ignore client busy state during transfer (send request immediately after response)');  
   console.log(' -p {port} use usb port other than default 0');
   console.log(' -v verbose logging');
   console.log(' -s skip download of new files');
