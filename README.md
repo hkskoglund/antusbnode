@@ -115,10 +115,18 @@ node getfit -L {loglevel}
 ```
 
 ## troubleshoot
+### linux
 On fedora its required that
-    * sudo yum install systemd-devel
-    * sudo yum install gcc-c++
+
+    sudo yum install systemd-devel
+    sudo yum install gcc
+    sudo yum install gcc-c++
 is installed to compile libusb dependency
+
+#### udev access
+Sets up the permission for accessing usb sticks from userland
+
+    sudo cp ./etc/udev/rules.d/80-garmin.rules /etc/udev/rules.d
 
 ## licence
 MIT

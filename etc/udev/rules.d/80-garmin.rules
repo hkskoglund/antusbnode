@@ -1,0 +1,5 @@
+
+# Setup access for ANT USB sticks in /dev-directory on linux. Copy file to '/etc/udev/rules.d'.
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="0fcf", ATTR{idProduct}=="1008", MODE="0666", SYMLINK+="ttyANT2%n", ACTION=="add"
+SUBSYSTEM=="usb", ATTR{idVendor}=="0fcf", ATTR{idProduct}=="1009", MODE="0666", SYMLINK+="ttyANT3%n", ACTION=="add"
