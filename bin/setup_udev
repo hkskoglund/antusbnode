@@ -1,0 +1,3 @@
+echo Copying udev rules to etc
+cat ./etc/udev/rules.d/80-garmin.rules
+sudo cp ./etc/udev/rules.d/* /etc/udev/rules.d

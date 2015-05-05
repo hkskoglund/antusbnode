@@ -32,7 +32,6 @@ node getfit -d 10,11,12
 List directory on device
 ```
 node getfit -l
-Host getfit connecting to device 0 channel 0 - port 0 Bus 4 Number 4: ID fcf:1009 Dynastream Innovations, ANT USB-m Stick
 totals 4290
 --w-rw--- 1 getfit antfs     1900544 Dec 31  1989 Manufacturer-1
 ----rw--- 1 getfit antfs      262144 Dec 31  1989 Manufacturer-2
@@ -116,17 +115,31 @@ node getfit -L {loglevel}
 
 ## troubleshoot
 ### linux
-On fedora its required that
-
+#### fedora
     sudo yum install systemd-devel
     sudo yum install gcc
     sudo yum install gcc-c++
 is installed to compile libusb dependency
 
+#### ubuntu
+    sudo apt-get install libudev-devel
+    sudo apt-get install g++
+is installed to compile libusb dependency
+
 #### udev access
 Sets up the permission for accessing usb sticks from userland
 
-    sudo cp ./etc/udev/rules.d/80-garmin.rules /etc/udev/rules.d
+    npm run udev
+
+### windows
+#### LIBUSB_ERROR_ACCESS ([winusbx_claim_interface] could not access interface 0:)
+
+libusb0 (v1.2.40.201) default driver is not compatible
+
+Zadig utility (http://zadig.akeo.ie) can be used to change drivers to
+
+- libusb-win32 (v1.2.6.0)
+- WinUSB (v6.1.7600.16385)
 
 ## licence
 MIT

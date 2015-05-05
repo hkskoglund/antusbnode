@@ -24,7 +24,10 @@
     "type": "git",
     "url": "https://github.com/hkskoglund/getfit.git"
   },
-  "scripts": {},
+  "scripts": {
+    "start": "node getfit.js -l",
+    "udev" : "./bin/setup_udev"
+  },
   "dependencies": {
     "libantjs": "git://github.com/hkskoglund/libantjs.git#v0.2.3",
     "minimist": "^1.1.1"

@@ -43,8 +43,16 @@ function onInited(error, notificationStartup) {
   });
 
   host.on('open', function(ch) {
-    var msg = 'Host ' + hostname + ' connecting to device ' + deviceNumber + ' channel ' + ch;
-    host.deviceToString(devices[port], function _onDeviceInfo(e,m) { console.log(msg + ' - port ' + port + ' ' + m);});
+    var msg = hostname + ' connecting to device';
+
+    if (argv.v)
+    {
+      msg += ' ' + deviceNumber + ' channel ' + ch;
+
+      host.deviceToString(devices[port], function _onDeviceInfo(e,m) { console.log(msg + ' - port ' + port + ' ' + m);});
+    }
+    //else
+    //  console.log(msg);
   });
 
   host.connectANTFS(channel, net, deviceNumber, hostname, argv.d, argv.e, argv.l, argv.s, argv.b, onConnect);
@@ -52,7 +60,7 @@ function onInited(error, notificationStartup) {
 }
 
 if (argv.h) {
-  console.log('Usage: getfit -d {index} -e {index} -l\n');  
+  console.log('Usage: getfit -d {index} -e {index} -l\n');
   console.log(' -d {index} or -d {index1,...,indexn} download');
   console.log(' -e {index} or -d {index1,...,indexn} erase');
   console.log(' -l list device directory');
