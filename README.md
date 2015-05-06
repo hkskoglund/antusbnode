@@ -141,5 +141,17 @@ Zadig utility (http://zadig.akeo.ie) can be used to change drivers to
 - libusb-win32 (v1.2.6.0)
 - WinUSB (v6.1.7600.16385)
 
+## testing/debugging
+
+### Transfer in bad RF conditions
+
+#### terminal 1 - filtered
+
+    node getfit -l -v | tee dump.log | egrep 'TX_FAILED|RX_FAILED|RX_FAIL|burst response timeout'
+
+#### terminal 2
+
+    tail -f dump.log
+
 ## licence
 MIT

@@ -1,6 +1,6 @@
 {
   "name": "getfit",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "get FIT files from antfs device",
   "bin": "./getfit.js",
   "man": "./man/getfit.1",
@@ -29,7 +29,7 @@
     "udev" : "./bin/setup_udev"
   },
   "dependencies": {
-    "libantjs": "git://github.com/hkskoglund/libantjs.git#v0.2.3",
+    "libantjs": "git://github.com/hkskoglund/libantjs.git#v0.2.4",
     "minimist": "^1.1.1"
   },
   "engines": {
