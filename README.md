@@ -116,15 +116,14 @@ node getfit -L {loglevel}
 ## troubleshoot
 ### linux
 #### fedora
-    sudo yum install systemd-devel
-    sudo yum install gcc
-    sudo yum install gcc-c++
-is installed to compile libusb dependency
+Installs libusb dependencies
+
+    npm run fedora
 
 #### ubuntu
-    sudo apt-get install libudev-devel
-    sudo apt-get install g++
-is installed to compile libusb dependency
+Installs libusb dependencies
+
+    npm run ubuntu
 
 #### udev access
 Sets up the permission for accessing usb sticks from userland

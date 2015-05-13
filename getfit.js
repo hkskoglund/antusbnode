@@ -60,6 +60,7 @@ function onInited(error, notificationStartup) {
 }
 
 if (argv.h) {
+  
   console.log('Usage: getfit -d {index} -e {index} -l\n');
   console.log(' -d {index} or -d {index1,...,indexn} download');
   console.log(' -e {index} or -d {index1,...,indexn} erase');

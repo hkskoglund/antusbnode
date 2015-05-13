@@ -26,7 +26,11 @@
   },
   "scripts": {
     "start": "node getfit.js -l",
-    "udev" : "./bin/setup_udev"
+    "fedora": "./bin/fedora",
+    "ubuntu": "./bin/ubuntu",
+    "udev" : "./bin/setup_udev",
+    "fedora-udev" : "./bin/fedora && ./bin/setup_udev",
+    "ubuntu-udev" : "./bin/ubuntu && ./bin/setup_udev"
   },
   "dependencies": {
     "libantjs": "git://github.com/hkskoglund/libantjs.git#v0.2.4",
