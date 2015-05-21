@@ -21,9 +21,9 @@ Download file at index 10
 node getfit -d 10
 
 ```
-Download file at index 10,11,12
+Download file at index 10-12
 ```
-node getfit -d 10,11,12
+node getfit -d 10-12
 
 ```
 
