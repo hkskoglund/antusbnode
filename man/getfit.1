@@ -11,8 +11,14 @@ A utility to get FIT files from an antfs device. By default new files are downlo
 .BR \-d " "\fIINDEX\fR
 Download file at index
 .TP
+.BR \-d " "\fIINDEXmin\fR-\fIINDEXmax\fR
+Download file from INDEXmin - to INDEXmax
+.TP
 .BR \-e " "\fIINDEX\fR
 Erase file at index
+.TP
+.BR \-e " "\fIINDEXmin\fR-\fIINDEXmax\fR
+Erase file from INDEXmin - to INDEXmax
 .TP
 .BR \-s
 Skip new files
@@ -39,7 +45,7 @@ Verbose logging including usb traffic.
 libusb log level
 .SH FILES
 .TP
-.I ~/.authorization-<clientSerialNumber>.key
+.I ./authorization-<clientSerialNumber>.key
 .RS
 Authorization file with passkey for device that enables connection without pairing.
 .SH AUTHOR
