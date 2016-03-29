@@ -1,6 +1,6 @@
 {
   "name": "getfit",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "get FIT files from antfs device",
   "bin": "./getfit.js",
   "man": "./man/getfit.1",
