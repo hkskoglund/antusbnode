@@ -61,15 +61,15 @@ function onInited(error, notificationStartup) {
 
 if (argv.h) {
 
-  console.log('Usage: getfit -d {index} -e {index} -l\n');
-  console.log(' -d {index} or -d {index1,indexMin-indexMax,...,indexn} download');
-  console.log(' -e {index} or -e {index1,indexMin-indexMax,...,indexn} erase');
+  console.log('Usage: getfit [-d index] [-e index] [-l]\n');
+  console.log(' -d index or -d index1,indexMin-indexMax,...,indexn - download');
+  console.log(' -e index or -e index1,indexMin-indexMax,...,indexn - erase');
   console.log(' -l list device directory');
   console.log(' -b ignore client busy state during transfer (send request immediately after response)');
-  console.log(' -p {port} use usb port other than default 0');
+  console.log(' -p port - use usb port other than default 0');
   console.log(' -v verbose logging');
   console.log(' -s skip download of new files');
-  console.log(' -L {level} libusb logging, level 0 - 4');
+  console.log(' -L level - libusb logging (level 0 - 4)');
   console.log(' -h usage');
   process.exit(0);
 }

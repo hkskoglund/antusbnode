@@ -1,0 +1,1 @@
+sudo dnf install systemd-devel gcc gcc-c++
